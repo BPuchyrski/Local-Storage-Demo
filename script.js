@@ -5,7 +5,6 @@ let reset = document.querySelector(".reset");
 let libraryArr = [];
 let queueArr = [];
 let id = "";
-
 let addToLibrary = (id) => {
   let parsedLibrary = JSON.parse(localStorage.getItem("library"));
 
@@ -66,10 +65,6 @@ que.addEventListener("click", () => {
 
 reset.addEventListener("click", () => {
   localStorage.clear();
-  for (let i = 0; i <= libraryArr.length; i++) {
-    libraryArr.pop();
-  }
-  for (let j = 0; j < queueArr.length; j++) {
-    queueArr.pop();
-  }
+  libraryArr = [];
+  queueArr = [];
 });
