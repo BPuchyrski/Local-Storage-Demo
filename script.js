@@ -68,3 +68,5 @@ reset.addEventListener("click", () => {
   libraryArr = [];
   queueArr = [];
 });
+
+// const ID_URL = `${BASE_URL}/movie/`;  `${ID_URL}${id}?api_key=${API_KEY}`
