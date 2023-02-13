@@ -7,10 +7,8 @@ let queueArr = [];
 let id = "";
 let addToLibrary = (id) => {
   let parsedLibrary = JSON.parse(localStorage.getItem("library"));
-  let names = libraryArr.map((obj) => {
-    return obj.name;
-  });
-  if (names.includes(id.name) || id === "") {
+
+  if (libraryArr.includes(id) || id === "") {
     return;
   } else if (libraryArr.length <= 0 && parsedLibrary !== null) {
     parsedLibrary.forEach((element) => {
@@ -31,10 +29,8 @@ let addToLibrary = (id) => {
 
 let addToQueue = (id) => {
   let parsedQueue = JSON.parse(localStorage.getItem("queue"));
-  let names = queueArr.map((obj) => {
-    return obj.name;
-  });
-  if (names.includes(id.name) || id === "") {
+
+  if (queueArr.includes(id) || id === "") {
     return;
   } else if (queueArr.length <= 0 && parsedQueue !== null) {
     parsedQueue.forEach((element) => {
@@ -54,9 +50,7 @@ let addToQueue = (id) => {
 };
 
 let inputValue = () => {
-  id = {
-    name: `${input.value}`,
-  };
+  id = input.value;
 };
 
 library.addEventListener("click", () => {
