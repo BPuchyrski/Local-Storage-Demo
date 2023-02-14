@@ -72,9 +72,10 @@ reset.addEventListener("click", () => {
 // const ID_URL = `${BASE_URL}/movie/`;  `${ID_URL}${id}?api_key=${API_KEY}`
 `https://api.themoviedb.org/3/movie/${id}?api_key=249f222afb1002186f4d88b2b5418b55`;
 
-ids = [76600, 505642];
-let fetchFilm = () => {
-  ids.forEach(async (id) => {
+// ids = [76600, 505642];
+let fetchLibrary = () => {
+  let parsedLibrary = JSON.parse(localStorage.getItem("library"));
+  parsedLibrary.forEach(async (id) => {
     let response = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=249f222afb1002186f4d88b2b5418b55`
     );
@@ -82,5 +83,4 @@ let fetchFilm = () => {
     return console.log(film);
   });
 };
-
-fetchFilm();
+fetchLibrary();
