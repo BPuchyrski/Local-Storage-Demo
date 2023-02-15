@@ -84,3 +84,9 @@ let fetchLibrary = () => {
   });
 };
 fetchLibrary();
+
+// let id = '';
+// movies.addEventListener('click', e => {
+//   id = e.target.parentElement.dataset.id;
+//   console.log(id);
+// });
